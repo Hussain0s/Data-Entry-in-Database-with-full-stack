@@ -30,3 +30,6 @@ This is a full-stack web application developed using *Java, Spring Boot, Spring,
 
 
 ![image](https://github.com/Hussain0s/Data-Entry-in-Database-with-full-stack/blob/b1de8c06718aadbd07c03f96029c9872021a28a6/Screenshot%202025-02-27%20113741.png)
+
+
+![image](https://github.com/Hussain0s/Data-Entry-in-Database-with-full-stack/blob/b997a7aefc5fbc774e3fba835488d562cc444983/Screenshot%202025-02-27%20113809.png)
