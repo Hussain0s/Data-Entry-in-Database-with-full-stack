@@ -22,6 +22,8 @@ This is a full-stack web application developed using *Java, Spring Boot, Spring,
 
 
 
+![watch the video](https://github.com/Hussain0s/Data-Entry-in-Database-with-full-stack/blob/f1fabe5fa5b9f6d9b1742a7fc4d60832f6213c19/20250227-0749-58.mp4)
+
    
 ![image alt](https://github.com/Hussain0s/Data-Entry-in-Database-with-full-stack/blob/24c650d21c69b1e4a609a1f9fdf63f9cc3532ec2/Screenshot%202025-02-27%20113709.png)
 
