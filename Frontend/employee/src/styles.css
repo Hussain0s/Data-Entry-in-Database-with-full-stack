@@ -1,0 +1,212 @@
+/* Import Modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Root Variables */
+:root {
+    --bg-dark: #090a0f;
+    --text-color: #e0e0e0;
+    --card-bg: rgba(255, 255, 255, 0.07);
+    --primary: #16e0f3;
+    --secondary: #ff3cac;
+    --highlight: #ffcc00;
+    --border-radius: 16px;
+    --neon-glow: 0 0 15px rgba(22, 224, 243, 0.8);
+    --transition-speed: 0.4s;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(130deg, #090a0f, #1a1d29);
+    color: var(--text-color);
+    text-align: center;
+    padding: 30px;
+    overflow-x: hidden;
+}
+
+/* Main App Container */
+.app-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--neon-glow);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Floating Neon Glow */
+.app-container::before {
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--primary), transparent);
+    top: -50px;
+    left: -50px;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* 3D Button */
+button {
+    background: linear-gradient(145deg, var(--primary), var(--secondary));
+    color: #fff;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: var(--border-radius);
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: var(--neon-glow);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button Hover - Glow & Scale */
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px var(--primary);
+}
+
+/* Button Active - Press Effect */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Animated Button Border */
+button::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--border-radius);
+    padding: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--highlight));
+    background-size: 200%;
+    animation: borderMove 3s infinite linear;
+    z-index: -1;
+}
+
+@keyframes borderMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Neon Input Fields */
+input {
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    outline: none;
+    font-size: 18px;
+    transition: all var(--transition-speed);
+}
+
+/* Input Hover & Focus Effects */
+input:focus,
+input:hover {
+    border-color: var(--highlight);
+    box-shadow: 0px 0px 15px var(--primary);
+    transform: scale(1.02);
+}
+
+/* Employee Cards */
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--neon-glow);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    backdrop-filter: blur(12px);
+}
+
+/* Card Hover - Floating Effect */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 12px 24px var(--secondary);
+}
+
+/* Neon List Items */
+.list-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.list-container li {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    margin: 10px 0;
+    box-shadow: var(--shadow-dark);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+/* List Item Hover */
+.list-container li:hover {
+    transform: scale(1.06);
+    background: var(--hover);
+    color: white;
+    box-shadow: 0px 12px 24px var(--highlight);
+}
+
+/* Loading Skeleton Effect */
+.skeleton {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 25%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 75%);
+    background-size: 200% 100%;
+    animation: skeletonLoading 1.5s infinite linear;
+    border-radius: var(--border-radius);
+    height: 20px;
+    width: 100%;
+}
+
+@keyframes skeletonLoading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container, .list-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
